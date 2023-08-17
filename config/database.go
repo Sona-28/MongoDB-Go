@@ -1,10 +1,10 @@
 package config
 
 import (
+	"MongoDB-Go/constants"
 	"context"
 	"fmt"
 	"log"
-	"mongodb_connect/constants"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
@@ -26,7 +26,7 @@ func ConnectDataBase() (*mongo.Client, error){
 	return mongoClient, nil
 }
 
-func GetCollection(client *mongo.Client,dbname string, collectionName string) *mongo.Collection{
+func GetCollection(dbname string, collectionName string) *mongo.Collection{
 	client, err := ConnectDataBase()
 	if err != nil{
 		fmt.Println(err)

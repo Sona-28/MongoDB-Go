@@ -3,8 +3,8 @@ package services
 import (
 	"context"
 	"fmt"
-	"mongodb_connect/config"
-	"mongodb_connect/models"
+	"MongoDB-Go/config"
+	"MongoDB-Go/models"
 	"time"
 
 	// "go.mongodb.org/mongo-driver/bson/primitive"
@@ -12,8 +12,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 func ProductContext() *mongo.Collection{
-	client,_ := config.ConnectDataBase()
-	return config.GetCollection(client, "inventory", "products")
+	// client,_ := config.ConnectDataBase()
+	return config.GetCollection( "inventory", "products")
 }
 
 func InsertProduct(product models.Product) (*mongo.InsertOneResult, error){

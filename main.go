@@ -2,11 +2,10 @@ package main
 
 import (
 	// "context"
+	"MongoDB-Go/services"
 	"fmt"
 	// "mongodb_connect/config"
 	// "mongodb_connect/models"
-	"mongodb_connect/services"
-
 	// "golang.org/x/vuln/client"
 	// "mongodb_connect/constants"
 	// "go.mongodb.org/mongo-driver/bson"
@@ -50,9 +49,19 @@ func main() {
 	// 	fmt.Println(pro)
 	// }
 
-	r,_ := services.GetRestaurant()
-	for _,res := range r{
-		fmt.Println(res.Name)
-	}
+	// r,_ := services.GetRestaurant()
+	// for _,res := range r{
+	// 	fmt.Println(res.Name)
+	// }
+
+	// tra,_ := services.FindElements()
+	// for _,t := range tra{
+	// 	fmt.Println(t)
+	// }
+	// fmt.Println(tra)
+	// 	services.FetchAggregateTransactions()
+
+	tra,_ := services.UpdateTransaction(481754,475621)
+	fmt.Println(tra.ModifiedCount)
 	fmt.Println("MongoDB connected successfully...")
 }

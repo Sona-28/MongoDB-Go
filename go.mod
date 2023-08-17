@@ -1,4 +1,4 @@
-module mongodb_connect
+module MongoDB-Go
 
 go 1.20
 

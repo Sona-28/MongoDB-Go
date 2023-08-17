@@ -3,8 +3,8 @@ package services
 import (
 	"context"
 	"fmt"
-	"mongodb_connect/config"
-	"mongodb_connect/models"
+	"MongoDB-Go/config"
+	"MongoDB-Go/models"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson"
@@ -13,8 +13,8 @@ import (
 )
 
 func RestaurantContext() *mongo.Collection {
-	client, _ := config.ConnectDataBase()
-	return config.GetCollection(client, "sample_restaurants", "restaurants")
+	// client, _ := config.ConnectDataBase()
+	return config.GetCollection( "sample_restaurants", "restaurants")
 }
 
 func GetRestaurant() ([]*models.Restaurant, error) {
